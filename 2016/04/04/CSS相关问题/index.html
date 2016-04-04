@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS相关问题 | 飞翔的鱼</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、CSS 中类 (classes) 和 ID 的区别。class在程序中称为类，同一个html网页页面可以无数次的调用相同的class类；ID是表示着标签的身份，在JS脚本中会用到id，当JS要修改一个标签的属性时，JS会将id名作为该标签的唯一标识进行操作。也就是说ID只是页面元素的标识，供其他元素脚本等引用。假如你的页面里出现了两个ID那JS效果特性较出现逻辑错误不知道依据哪个ID来改变其标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS相关问题">
+<meta property="og:url" content="http://yoursite.com/2016/04/04/CSS相关问题/index.html">
+<meta property="og:site_name" content="飞翔的鱼">
+<meta property="og:description" content="1、CSS 中类 (classes) 和 ID 的区别。class在程序中称为类，同一个html网页页面可以无数次的调用相同的class类；ID是表示着标签的身份，在JS脚本中会用到id，当JS要修改一个标签的属性时，JS会将id名作为该标签的唯一标识进行操作。也就是说ID只是页面元素的标识，供其他元素脚本等引用。假如你的页面里出现了两个ID那JS效果特性较出现逻辑错误不知道依据哪个ID来改变其标">
+<meta property="og:updated_time" content="2016-04-04T01:18:56.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS相关问题">
+<meta name="twitter:description" content="1、CSS 中类 (classes) 和 ID 的区别。class在程序中称为类，同一个html网页页面可以无数次的调用相同的class类；ID是表示着标签的身份，在JS脚本中会用到id，当JS要修改一个标签的属性时，JS会将id名作为该标签的唯一标识进行操作。也就是说ID只是页面元素的标识，供其他元素脚本等引用。假如你的页面里出现了两个ID那JS效果特性较出现逻辑错误不知道依据哪个ID来改变其标">
+  
+    <link rel="alternate" href="/atom.xml" title="飞翔的鱼" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">飞翔的鱼</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">畅游海洋，遨游天空</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS相关问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/04/CSS相关问题/" class="article-date">
+  <time datetime="2016-04-04T01:18:29.000Z" itemprop="datePublished">2016-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Exercise/">Exercise</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS相关问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、CSS-中类-classes-和-ID-的区别。"><a href="#1、CSS-中类-classes-和-ID-的区别。" class="headerlink" title="1、CSS 中类 (classes) 和 ID 的区别。"></a>1、CSS 中类 (classes) 和 ID 的区别。</h3><p><strong>class在程序中称为类</strong>，同一个html网页页面可以无数次的调用相同的class类；<br><strong>ID是表示着标签的身份</strong>，在JS脚本中会用到id，当JS要修改一个标签的属性时，JS会将id名作为该标签的唯一标识进行操作。也就是说ID只是页面元素的标识，供其他元素脚本等引用。假如你的页面里出现了两个ID那JS效果特性较出现逻辑错误不知道依据哪个ID来改变其标签属性。在CSS里的ID不一定为JS而设置的，但是<strong>同样ID在页面里也只能出现一次，并且是唯一性</strong>。</p>
+<h3 id="2、请问-“resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？"><a href="#2、请问-“resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？" class="headerlink" title="2、请问 “resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？"></a>2、请问 “resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？</h3><p>resetting:直接重置所有格式，没有任何前提性质的。<br>normalizing：重置部分格式的。<br>所以建议在设置的时候使用 normalizing进行重置，避免造成所有数据丢失。resetting 这个需要谨慎使用。</p>
+<h3 id="3、请解释浮动-Floats-及其工作原理。"><a href="#3、请解释浮动-Floats-及其工作原理。" class="headerlink" title="3、请解释浮动 (Floats) 及其工作原理。"></a>3、请解释浮动 (Floats) 及其工作原理。</h3><p>Float是css的定位属性，在CSS中的作用是使元素脱离正常的文档流并使其移动到其父元素的“最左边”或“最右边”<br>工作原理：</p>
+<h3 id="4、描述-z-index-和叠加上下文是如何形成的。"><a href="#4、描述-z-index-和叠加上下文是如何形成的。" class="headerlink" title="4、描述 z-index 和叠加上下文是如何形成的。"></a>4、描述 z-index 和叠加上下文是如何形成的。</h3><p>z-index:<br>一组拥有公共父级的元素在层叠顺序中一起上移或者下移被 称为层叠上下文；<br>在一个元素上形成层叠上下文有如下三中方式：<br>当一个元素是文档的根元素（<code>&lt;html&gt;</code>元 素）<br>当一个元素有除static之外的position属性值且z-index值不为auto<br>当一个元素有小于1的opacity(透明度)值</p>
+<h3 id="5、请描述-BFC-Block-Formatting-Context-及其如何工作。"><a href="#5、请描述-BFC-Block-Formatting-Context-及其如何工作。" class="headerlink" title="5、请描述 BFC(Block Formatting Context) 及其如何工作。"></a>5、请描述 BFC(Block Formatting Context) 及其如何工作。</h3><h3 id="6、列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。"><a href="#6、列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。" class="headerlink" title="6、列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。"></a>6、列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。</h3><p><strong>normal flow、containing block、bfc、margin collapse，base line，writing mode，bidi</strong></p>
+<h3 id="7、请解释-CSS-sprites，以及你要如何在页面或网站中实现它。"><a href="#7、请解释-CSS-sprites，以及你要如何在页面或网站中实现它。" class="headerlink" title="7、请解释 CSS sprites，以及你要如何在页面或网站中实现它。"></a>7、请解释 CSS sprites，以及你要如何在页面或网站中实现它。</h3><p>CSS sprites是CSS图形拼合技术，将多张图片合成一张图片。</p>
+<h3 id="8、你最喜欢的图片替换方法是什么，你如何选择使用。"><a href="#8、你最喜欢的图片替换方法是什么，你如何选择使用。" class="headerlink" title="8、你最喜欢的图片替换方法是什么，你如何选择使用。"></a>8、你最喜欢的图片替换方法是什么，你如何选择使用。</h3><p>图片替换方法： Fahrner Image Replacement (FIR)<br>               Phark 的方法<br>               Gilder/Levin 的方法 (推荐)<br>   我最喜欢用Gilder/Levin 的方法，      </p>
+<h3 id="9、你会如何解决特定浏览器的样式问题？"><a href="#9、你会如何解决特定浏览器的样式问题？" class="headerlink" title="9、你会如何解决特定浏览器的样式问题？"></a>9、你会如何解决特定浏览器的样式问题？</h3><h3 id="10、如何为有功能限制的浏览器提供网页？"><a href="#10、如何为有功能限制的浏览器提供网页？" class="headerlink" title="10、如何为有功能限制的浏览器提供网页？"></a>10、如何为有功能限制的浏览器提供网页？</h3><h3 id="11、你会使用哪些技术和处理方法？"><a href="#11、你会使用哪些技术和处理方法？" class="headerlink" title="11、你会使用哪些技术和处理方法？"></a>11、你会使用哪些技术和处理方法？</h3><h3 id="12、有哪些的隐藏内容的方法-如果同时还要保证屏幕阅读器可用呢-？"><a href="#12、有哪些的隐藏内容的方法-如果同时还要保证屏幕阅读器可用呢-？" class="headerlink" title="12、有哪些的隐藏内容的方法 (如果同时还要保证屏幕阅读器可用呢)？"></a>12、有哪些的隐藏内容的方法 (如果同时还要保证屏幕阅读器可用呢)？</h3><h3 id="13、你用过栅格系统-grid-system-吗？如果使用过，你最喜欢哪种？"><a href="#13、你用过栅格系统-grid-system-吗？如果使用过，你最喜欢哪种？" class="headerlink" title="13、你用过栅格系统 (grid system) 吗？如果使用过，你最喜欢哪种？"></a>13、你用过栅格系统 (grid system) 吗？如果使用过，你最喜欢哪种？</h3><p>bootstrap栅格系统，Foundation中的栅格，block grid,Toast栅格</p>
+<h3 id="14、你用过媒体查询，或针对移动端的布局-CSS-吗？"><a href="#14、你用过媒体查询，或针对移动端的布局-CSS-吗？" class="headerlink" title="14、你用过媒体查询，或针对移动端的布局/CSS 吗？"></a>14、你用过媒体查询，或针对移动端的布局/CSS 吗？</h3><h3 id="15、你熟悉-SVG-样式的书写吗？"><a href="#15、你熟悉-SVG-样式的书写吗？" class="headerlink" title="15、你熟悉 SVG 样式的书写吗？"></a>15、你熟悉 SVG 样式的书写吗？</h3><h3 id="16、如何优化网页的打印样式？"><a href="#16、如何优化网页的打印样式？" class="headerlink" title="16、如何优化网页的打印样式？"></a>16、如何优化网页的打印样式？</h3><h3 id="17、在书写高效-CSS-时会有哪些问题需要考虑？"><a href="#17、在书写高效-CSS-时会有哪些问题需要考虑？" class="headerlink" title="17、在书写高效 CSS 时会有哪些问题需要考虑？"></a>17、在书写高效 CSS 时会有哪些问题需要考虑？</h3><p>使用Reset但并非全局Reset ;<br>良好的命名习惯;<br>代码缩写;<br>利用CSS继承;<br>使用多重选择器;<br>适当的代码注释;<br>给你的CSS代码排序(一般按字母排序);<br>保持CSS的可读性;<br>选择更优的样式属性值;<br>使用<link>代替@import ;<br>使用外部样式表;<br>避免使用CSS表达式（Expression）;<br>代码压缩 .</p>
+<h3 id="18、使用CSS预处理器的优缺点有哪些？"><a href="#18、使用CSS预处理器的优缺点有哪些？" class="headerlink" title="18、使用CSS预处理器的优缺点有哪些？"></a>18、使用CSS预处理器的优缺点有哪些？</h3><p>CSS预处理器：SASS,LESS,Stylus<br>优点：<br>开发速度提升；<br>代码优化效率提高（对开发者而言）；<br>代码更通俗易懂（对开发者而言）；<br>维护简单便捷；<br>代码更干净，优美；<br>功能更多更强，CSS做出JS的特效（其实就是JS）；<br>LESS/SASS缺点：<br>舍弃用户体验来提高开发的效率，可以查考Bootstrap的缺点；<br>舍弃网页打开速度换取开发效率提升；<br>需要一个学习的过程，用之不当反而弄巧反拙；<br>总而言之，LESS/SASS缺点就是需要多一个编译器来重新编译一次你的CSS代码，也就是给浏览器多了一道工序，网页显示的速度会减慢（网页显示顺序，从上至下，一般CSS放在头部，先HTML DOM元素–&gt;CSS–&gt;脚本文件–&gt;页面元素如图片，视频，音频—&gt;最后完全显示）<br>你在CSS工序加了一个步骤，速度自然慢，时间自然多了。</p>
+<h3 id="19、请描述你曾经使用过的CSS预处理器的优缺点。"><a href="#19、请描述你曾经使用过的CSS预处理器的优缺点。" class="headerlink" title="19、请描述你曾经使用过的CSS预处理器的优缺点。"></a>19、请描述你曾经使用过的CSS预处理器的优缺点。</h3><h3 id="20、如果设计中使用了非标准的字体，你该如何去实现？"><a href="#20、如果设计中使用了非标准的字体，你该如何去实现？" class="headerlink" title="20、如果设计中使用了非标准的字体，你该如何去实现？"></a>20、如果设计中使用了非标准的字体，你该如何去实现？</h3><h3 id="21、请解释浏览器是如何判断元素是否匹配某个-CSS-选择器？"><a href="#21、请解释浏览器是如何判断元素是否匹配某个-CSS-选择器？" class="headerlink" title="21、请解释浏览器是如何判断元素是否匹配某个 CSS 选择器？"></a>21、请解释浏览器是如何判断元素是否匹配某个 CSS 选择器？</h3><p>首先，选出所有符合css选择器的元素。然后判断这个元素是否在里面。伪代码如下：<br>$(selector).hasDom(e) // true or false<br>浏览器也是先根据css rules 与dom tree 生成render tree。应该是拿css rule去匹配dom，而不是用dom结构去匹配css rule。</p>
+<h3 id="22、请描述伪元素-pseudo-elements-及其用途。"><a href="#22、请描述伪元素-pseudo-elements-及其用途。" class="headerlink" title="22、请描述伪元素(pseudo-elements) 及其用途。"></a>22、请描述伪元素(pseudo-elements) 及其用途。</h3><p>CSS伪元素用于将特殊的效果添加到某些选择器。</p>
+<h3 id="23、请解释你对盒模型的理解，以及如何在-CSS中告诉浏览器使用不同的盒模型来渲染你的布局。"><a href="#23、请解释你对盒模型的理解，以及如何在-CSS中告诉浏览器使用不同的盒模型来渲染你的布局。" class="headerlink" title="23、请解释你对盒模型的理解，以及如何在 CSS中告诉浏览器使用不同的盒模型来渲染你的布局。"></a>23、请解释你对盒模型的理解，以及如何在 CSS中告诉浏览器使用不同的盒模型来渲染你的布局。</h3><p>盒子模型由margin,boder,padding,content组成。<br>不同的浏览器有不同的解析盒子模型，</p>
+<h3 id="23、请解释-box-sizing-border-box-的作用-并且说明使用它有什么好处？"><a href="#23、请解释-box-sizing-border-box-的作用-并且说明使用它有什么好处？" class="headerlink" title="23、请解释*{box-sizing:border-box; }  的作用,并且说明使用它有什么好处？"></a>23、请解释*{box-sizing:border-box; }  的作用,并且说明使用它有什么好处？</h3><p>请解释*{box-sizing:border-box; }  的作用,并且说明使用它有什么好处?</p>
+<h3 id="24、请罗列出你所知道的-display-属性的全部值"><a href="#24、请罗列出你所知道的-display-属性的全部值" class="headerlink" title="24、请罗列出你所知道的 display 属性的全部值"></a>24、请罗列出你所知道的 display 属性的全部值</h3><p>display的常用属性：<br>block，inline，inline-block,inheirt,none<br>display的其他属性：<br>list-item 此元素会作为列表显示。<br>run-in此元素会根据上下文作为块级元素或内联元素显示。<br>compact CSS 中有值 compact，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。<br>marker CSS 中有值 marker，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。<br>table 此元素会作为块级表格来显示（类似table），表格前后带有换行符。<br>inline-table 此元素会作为内联表格来显示（类似table），表格前后没有换行符。<br>table-row-group 此元素会作为一个或多个行的分组来显示（类似tbody）<br>table-header-group 此元素会作为一个或多个行的分组来显示（类似thead）<br>table-footer-group： 此元素会作为一个或多个行的分组来显示（类似tfoot）<br>table-row 此元素会作为一个表格行显示（类似 tr ）。<br>table-column-group 此元素会作为一个或多个列的分组来显示（类似 colgroup ）。<br>table-column 此元素会作为一个单元格列显示（类似 col ）<br>table-cell 此元素会作为一个表格单元格显示（类似 td 和 th）<br>table-caption 此元素会作为一个表格标题显示（类似 caption）</p>
+<h3 id="25、请解释-inline-和-inline-block-的区别？"><a href="#25、请解释-inline-和-inline-block-的区别？" class="headerlink" title="25、请解释 inline 和 inline-block 的区别？"></a>25、请解释 inline 和 inline-block 的区别？</h3><p>inline：行级元素，内联对象<code>inline</code>给它设置属性<code>height</code>和<code>width</code>是没有用的，致使它变宽变大的原因是内部元素的宽高<code>+padding</code>。观察inline对象的前后元素我们会发现<code>inline</code>不单独占一行，其它元素会紧跟其后。<br>inline-block:即具有<code>block</code>的宽高特性又具有<code>inline</code>的同行元素特性，可以设置宽高，也不独占一行。</p>
+<h3 id="26、请解释-relative、fixed、absolute-和-static-元素的区别？"><a href="#26、请解释-relative、fixed、absolute-和-static-元素的区别？" class="headerlink" title="26、请解释 relative、fixed、absolute 和 static 元素的区别？"></a>26、请解释 relative、fixed、absolute 和 static 元素的区别？</h3><p>relative：相对定位，生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常位置进行定位。可通过z-index进行层次分级。<br>absolute：绝对定位，生成绝对定位的元素，相对于 static定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行层次分级。<br>fixed：固定定位，fixed：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”,”right”以及”bottom”属性进行规定。可通过z-index进行层次分级。<br>static：默认值，没有定位，出现在正常的文档流中，（忽略 top, bottom,left,right,z-index 声明）。</p>
+<h3 id="27、CSS中字母’C’的意思是叠层-Cascading-。请问在确定样式的过程中优先级是如何决定的-请举例-？如何有效使用此系统？"><a href="#27、CSS中字母’C’的意思是叠层-Cascading-。请问在确定样式的过程中优先级是如何决定的-请举例-？如何有效使用此系统？" class="headerlink" title="27、CSS中字母’C’的意思是叠层(Cascading)。请问在确定样式的过程中优先级是如何决定的 (请举例)？如何有效使用此系统？"></a>27、CSS中字母’C’的意思是叠层(Cascading)。请问在确定样式的过程中优先级是如何决定的 (请举例)？如何有效使用此系统？</h3><p>四种样式的优先级别是(从高至低)：行内样式、内嵌样式、链接样式、导入样式</p>
+<h3 id="28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？"><a href="#28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？" class="headerlink" title="28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？"></a>28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？</h3><p>bootstrap</p>
+<h3 id="29、请问你有尝试过-CSS-Flexbox-或者-Grid-标准规格吗？"><a href="#29、请问你有尝试过-CSS-Flexbox-或者-Grid-标准规格吗？" class="headerlink" title="29、请问你有尝试过 CSS Flexbox 或者 Grid 标准规格吗？"></a>29、请问你有尝试过 CSS Flexbox 或者 Grid 标准规格吗？</h3><h3 id="30、为什么响应式设计-responsive-design-和自适应设计-adaptive-design-不同？"><a href="#30、为什么响应式设计-responsive-design-和自适应设计-adaptive-design-不同？" class="headerlink" title="30、为什么响应式设计 (responsive design) 和自适应设计 (adaptive design) 不同？"></a>30、为什么响应式设计 (responsive design) 和自适应设计 (adaptive design) 不同？</h3><p>响应式设计</p>
+<h3 id="31、你有兼容-retina屏幕的经历吗？如果有，在什么地方使用了何种技术？"><a href="#31、你有兼容-retina屏幕的经历吗？如果有，在什么地方使用了何种技术？" class="headerlink" title="31、你有兼容 retina屏幕的经历吗？如果有，在什么地方使用了何种技术？"></a>31、你有兼容 retina屏幕的经历吗？如果有，在什么地方使用了何种技术？</h3><h3 id="32、请问为何要使用translate-而非absolute-positioning，或反之的理由？为什么？"><a href="#32、请问为何要使用translate-而非absolute-positioning，或反之的理由？为什么？" class="headerlink" title="32、请问为何要使用translate()而非absolute positioning，或反之的理由？为什么？"></a>32、请问为何要使用translate()而非absolute positioning，或反之的理由？为什么？</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/04/CSS相关问题/" data-id="cimm379pi0000tkvskc5eozpg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/04/JS相关问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS相关问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/03/HTML相关问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML相关问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Exercise/">Exercise</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/04/JS相关问题/">JS相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/04/CSS相关问题/">CSS相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/03/HTML相关问题/">HTML相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/03/前端面试题/">前端面试题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 鱼包子<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
