@@ -18,50 +18,100 @@
     <meta property="og:image" content="undefined"/>
   
 
-  <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="飞翔的鱼" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
 
 </head>
 
-
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">飞翔的鱼</a></h1>
-  <h2><a href="/">畅游海洋，遨游天空</a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">飞翔的鱼</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-</header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-04-04T01:18:29.000Z"><a href="/2016/04/04/CSS相关问题/">2016-04-04</a></time>
-      
-      
-  
-    <h1 class="title">CSS相关问题</h1>
-  
 
-    </header>
-    <div class="entry">
-      
-        <h3 id="1、CSS-中类-classes-和-ID-的区别。"><a href="#1、CSS-中类-classes-和-ID-的区别。" class="headerlink" title="1、CSS 中类 (classes) 和 ID 的区别。"></a>1、CSS 中类 (classes) 和 ID 的区别。</h3><p><strong>class在程序中称为类</strong>，同一个html网页页面可以无数次的调用相同的class类；<br><strong>ID是表示着标签的身份</strong>，在JS脚本中会用到id，当JS要修改一个标签的属性时，JS会将id名作为该标签的唯一标识进行操作。也就是说ID只是页面元素的标识，供其他元素脚本等引用。假如你的页面里出现了两个ID那JS效果特性较出现逻辑错误不知道依据哪个ID来改变其标签属性。在CSS里的ID不一定为JS而设置的，但是<strong>同样ID在页面里也只能出现一次，并且是唯一性</strong>。</p>
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> CSS相关问题</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h3 id="1、CSS-中类-classes-和-ID-的区别。"><a href="#1、CSS-中类-classes-和-ID-的区别。" class="headerlink" title="1、CSS 中类 (classes) 和 ID 的区别。"></a>1、CSS 中类 (classes) 和 ID 的区别。</h3><p><strong>class在程序中称为类</strong>，同一个html网页页面可以无数次的调用相同的class类；<br><strong>ID是表示着标签的身份</strong>，在JS脚本中会用到id，当JS要修改一个标签的属性时，JS会将id名作为该标签的唯一标识进行操作。也就是说ID只是页面元素的标识，供其他元素脚本等引用。假如你的页面里出现了两个ID那JS效果特性较出现逻辑错误不知道依据哪个ID来改变其标签属性。在CSS里的ID不一定为JS而设置的，但是<strong>同样ID在页面里也只能出现一次，并且是唯一性</strong>。</p>
 <h3 id="2、请问-“resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？"><a href="#2、请问-“resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？" class="headerlink" title="2、请问 “resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？"></a>2、请问 “resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？</h3><p>resetting:直接重置所有格式，没有任何前提性质的。<br>normalizing：重置部分格式的。<br>所以建议在设置的时候使用 normalizing进行重置，避免造成所有数据丢失。resetting 这个需要谨慎使用。</p>
 <h3 id="3、请解释浮动-Floats-及其工作原理。"><a href="#3、请解释浮动-Floats-及其工作原理。" class="headerlink" title="3、请解释浮动 (Floats) 及其工作原理。"></a>3、请解释浮动 (Floats) 及其工作原理。</h3><p>Float是css的定位属性，在CSS中的作用是使元素脱离正常的文档流并使其移动到其父元素的“最左边”或“最右边”<br>工作原理：</p>
 <h3 id="4、描述-z-index-和叠加上下文是如何形成的。"><a href="#4、描述-z-index-和叠加上下文是如何形成的。" class="headerlink" title="4、描述 z-index 和叠加上下文是如何形成的。"></a>4、描述 z-index 和叠加上下文是如何形成的。</h3><p>z-index:<br>一组拥有公共父级的元素在层叠顺序中一起上移或者下移被 称为层叠上下文；<br>在一个元素上形成层叠上下文有如下三中方式：<br>当一个元素是文档的根元素（<code>&lt;html&gt;</code>元 素）<br>当一个元素有除static之外的position属性值且z-index值不为auto<br>当一个元素有小于1的opacity(透明度)值</p>
@@ -81,98 +131,136 @@
 <h3 id="27、CSS中字母’C’的意思是叠层-Cascading-。请问在确定样式的过程中优先级是如何决定的-请举例-？如何有效使用此系统？"><a href="#27、CSS中字母’C’的意思是叠层-Cascading-。请问在确定样式的过程中优先级是如何决定的-请举例-？如何有效使用此系统？" class="headerlink" title="27、CSS中字母’C’的意思是叠层(Cascading)。请问在确定样式的过程中优先级是如何决定的 (请举例)？如何有效使用此系统？"></a>27、CSS中字母’C’的意思是叠层(Cascading)。请问在确定样式的过程中优先级是如何决定的 (请举例)？如何有效使用此系统？</h3><p>四种样式的优先级别是(从高至低)：行内样式、内嵌样式、链接样式、导入样式</p>
 <h3 id="28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？"><a href="#28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？" class="headerlink" title="28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？"></a>28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？</h3><p>bootstrap</p>
 <h3 id="29、请问你有尝试过-CSS-Flexbox-或者-Grid-标准规格吗？"><a href="#29、请问你有尝试过-CSS-Flexbox-或者-Grid-标准规格吗？" class="headerlink" title="29、请问你有尝试过 CSS Flexbox 或者 Grid 标准规格吗？"></a>29、请问你有尝试过 CSS Flexbox 或者 Grid 标准规格吗？</h3><h3 id="30、为什么响应式设计-responsive-design-和自适应设计-adaptive-design-不同？"><a href="#30、为什么响应式设计-responsive-design-和自适应设计-adaptive-design-不同？" class="headerlink" title="30、为什么响应式设计 (responsive design) 和自适应设计 (adaptive design) 不同？"></a>30、为什么响应式设计 (responsive design) 和自适应设计 (adaptive design) 不同？</h3><p>响应式设计</p>
-<h3 id="31、你有兼容-retina屏幕的经历吗？如果有，在什么地方使用了何种技术？"><a href="#31、你有兼容-retina屏幕的经历吗？如果有，在什么地方使用了何种技术？" class="headerlink" title="31、你有兼容 retina屏幕的经历吗？如果有，在什么地方使用了何种技术？"></a>31、你有兼容 retina屏幕的经历吗？如果有，在什么地方使用了何种技术？</h3><h3 id="32、请问为何要使用translate-而非absolute-positioning，或反之的理由？为什么？"><a href="#32、请问为何要使用translate-而非absolute-positioning，或反之的理由？为什么？" class="headerlink" title="32、请问为何要使用translate()而非absolute positioning，或反之的理由？为什么？"></a>32、请问为何要使用translate()而非absolute positioning，或反之的理由？为什么？</h3>
-      
+<h3 id="31、你有兼容-retina屏幕的经历吗？如果有，在什么地方使用了何种技术？"><a href="#31、你有兼容-retina屏幕的经历吗？如果有，在什么地方使用了何种技术？" class="headerlink" title="31、你有兼容 retina屏幕的经历吗？如果有，在什么地方使用了何种技术？"></a>31、你有兼容 retina屏幕的经历吗？如果有，在什么地方使用了何种技术？</h3><h3 id="32、请问为何要使用translate-而非absolute-positioning，或反之的理由？为什么？"><a href="#32、请问为何要使用translate-而非absolute-positioning，或反之的理由？为什么？" class="headerlink" title="32、请问为何要使用translate()而非absolute positioning，或反之的理由？为什么？"></a>32、请问为何要使用translate()而非absolute positioning，或反之的理由？为什么？</h3>	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2016/04/04/JS相关问题/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2016/04/03/前端面试题/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
     </div>
-    <footer>
-      
-        
-  
-  <div class="categories">
-    <a href="/categories/Exercise/">Exercise</a>
-  </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
 
         
-        
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-    
-    
-      <a class="addthis_button_tweet"></a>
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
 
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
+    
+	
+	<!-- comment -->
+	
 <section id="comment">
-  <h1 class="title">留言</h1>
+  <h2 class="title">留言</h2>
 
-  
-      <div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div class="fb-comments" data-href="http://yoursite.com/2016/04/04/CSS相关问题/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
-      
   
 </section>
 
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:yoursite.com">
-  </form>
-</div>
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
 
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/Exercise/">Exercise</a><small>4</small></li>
-  
-  </ul>
-</div>
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2016-04-04 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Exercise/">Exercise<span>4</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1、CSS-中类-classes-和-ID-的区别。"><span class="toc-article-text">1、CSS 中类 (classes) 和 ID 的区别。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2、请问-“resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？"><span class="toc-article-text">2、请问 “resetting”和”normalizing”CSS之间的区别？你会如何选择，为什么？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#3、请解释浮动-Floats-及其工作原理。"><span class="toc-article-text">3、请解释浮动 (Floats) 及其工作原理。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#4、描述-z-index-和叠加上下文是如何形成的。"><span class="toc-article-text">4、描述 z-index 和叠加上下文是如何形成的。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#5、请描述-BFC-Block-Formatting-Context-及其如何工作。"><span class="toc-article-text">5、请描述 BFC(Block Formatting Context) 及其如何工作。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#6、列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。"><span class="toc-article-text">6、列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#7、请解释-CSS-sprites，以及你要如何在页面或网站中实现它。"><span class="toc-article-text">7、请解释 CSS sprites，以及你要如何在页面或网站中实现它。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#8、你最喜欢的图片替换方法是什么，你如何选择使用。"><span class="toc-article-text">8、你最喜欢的图片替换方法是什么，你如何选择使用。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#9、你会如何解决特定浏览器的样式问题？"><span class="toc-article-text">9、你会如何解决特定浏览器的样式问题？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#10、如何为有功能限制的浏览器提供网页？"><span class="toc-article-text">10、如何为有功能限制的浏览器提供网页？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#11、你会使用哪些技术和处理方法？"><span class="toc-article-text">11、你会使用哪些技术和处理方法？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#12、有哪些的隐藏内容的方法-如果同时还要保证屏幕阅读器可用呢-？"><span class="toc-article-text">12、有哪些的隐藏内容的方法 (如果同时还要保证屏幕阅读器可用呢)？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#13、你用过栅格系统-grid-system-吗？如果使用过，你最喜欢哪种？"><span class="toc-article-text">13、你用过栅格系统 (grid system) 吗？如果使用过，你最喜欢哪种？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#14、你用过媒体查询，或针对移动端的布局-CSS-吗？"><span class="toc-article-text">14、你用过媒体查询，或针对移动端的布局/CSS 吗？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#15、你熟悉-SVG-样式的书写吗？"><span class="toc-article-text">15、你熟悉 SVG 样式的书写吗？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#16、如何优化网页的打印样式？"><span class="toc-article-text">16、如何优化网页的打印样式？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#17、在书写高效-CSS-时会有哪些问题需要考虑？"><span class="toc-article-text">17、在书写高效 CSS 时会有哪些问题需要考虑？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#18、使用CSS预处理器的优缺点有哪些？"><span class="toc-article-text">18、使用CSS预处理器的优缺点有哪些？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#19、请描述你曾经使用过的CSS预处理器的优缺点。"><span class="toc-article-text">19、请描述你曾经使用过的CSS预处理器的优缺点。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#20、如果设计中使用了非标准的字体，你该如何去实现？"><span class="toc-article-text">20、如果设计中使用了非标准的字体，你该如何去实现？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#21、请解释浏览器是如何判断元素是否匹配某个-CSS-选择器？"><span class="toc-article-text">21、请解释浏览器是如何判断元素是否匹配某个 CSS 选择器？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#22、请描述伪元素-pseudo-elements-及其用途。"><span class="toc-article-text">22、请描述伪元素(pseudo-elements) 及其用途。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#23、请解释你对盒模型的理解，以及如何在-CSS中告诉浏览器使用不同的盒模型来渲染你的布局。"><span class="toc-article-text">23、请解释你对盒模型的理解，以及如何在 CSS中告诉浏览器使用不同的盒模型来渲染你的布局。</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#23、请解释-box-sizing-border-box-的作用-并且说明使用它有什么好处？"><span class="toc-article-text">23、请解释*{box-sizing:border-box; }  的作用,并且说明使用它有什么好处？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#24、请罗列出你所知道的-display-属性的全部值"><span class="toc-article-text">24、请罗列出你所知道的 display 属性的全部值</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#25、请解释-inline-和-inline-block-的区别？"><span class="toc-article-text">25、请解释 inline 和 inline-block 的区别？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#26、请解释-relative、fixed、absolute-和-static-元素的区别？"><span class="toc-article-text">26、请解释 relative、fixed、absolute 和 static 元素的区别？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#27、CSS中字母’C’的意思是叠层-Cascading-。请问在确定样式的过程中优先级是如何决定的-请举例-？如何有效使用此系统？"><span class="toc-article-text">27、CSS中字母’C’的意思是叠层(Cascading)。请问在确定样式的过程中优先级是如何决定的 (请举例)？如何有效使用此系统？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？"><span class="toc-article-text">28、你在开发或生产环境中使用过哪些CSS框架？你觉得应该如何改善他们？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#29、请问你有尝试过-CSS-Flexbox-或者-Grid-标准规格吗？"><span class="toc-article-text">29、请问你有尝试过 CSS Flexbox 或者 Grid 标准规格吗？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#30、为什么响应式设计-responsive-design-和自适应设计-adaptive-design-不同？"><span class="toc-article-text">30、为什么响应式设计 (responsive design) 和自适应设计 (adaptive design) 不同？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#31、你有兼容-retina屏幕的经历吗？如果有，在什么地方使用了何种技术？"><span class="toc-article-text">31、你有兼容 retina屏幕的经历吗？如果有，在什么地方使用了何种技术？</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#32、请问为何要使用translate-而非absolute-positioning，或反之的理由？为什么？"><span class="toc-article-text">32、请问为何要使用translate()而非absolute positioning，或反之的理由？为什么？</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
 
 
-  
-</aside>
-    <div class="clearfix"></div>
+
+	</div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
+  <div class="container-narrow">
+  <footer> <p>
   &copy; 2016 鱼包子
   
-</div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
-
-
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -183,5 +271,7 @@
 })(jQuery);
 </script>
 
+
+
 </body>
-</html>
+   </html>
