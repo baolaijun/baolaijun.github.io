@@ -107,6 +107,75 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2016-04-24 </div>
+			<div class="article-title"><a href="/2016/04/24/IIFE 立即调用的函数表达式/" >IIFE 立即调用的函数表达式</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h2 id="IIFE-Immediately-Invoked-Function-Expression-立即调用的函数表达式"><a href="#IIFE-Immediately-Invoked-Function-Expression-立即调用的函数表达式" class="headerlink" title="IIFE (Immediately Invoked Function Expression 立即调用的函数表达式)"></a>IIFE (Immediately Invoked Function Expression 立即调用的函数表达式)</h2><blockquote>
+<p>函数声明和函数表达式</p>
+<ul>
+<li>函数声明是语句所以在后面加()会抛出SyntaxError的错误</li>
+<li>函数表达式是表达式可以在它后面加()执行这个函数</li>
+<li>js解释器在遇到关键字function时，默认认为function(){}, function foo(){}这两种形式是函数声明，而不是函数表达式</li>
+<li>(), &amp;&amp;, ,, !, ~,+,-,new可以明确指出上述的两种形式是函数表达式而不是函数声明<br>自执行函数表达式写法</li>
+</ul>
+</blockquote>
+<h2 id="下面2个括弧-都会立即执行"><a href="#下面2个括弧-都会立即执行" class="headerlink" title="下面2个括弧()都会立即执行"></a>下面2个括弧()都会立即执行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">(function () &#123; /* code */ &#125; ()); // 推荐使用这个</span><br><span class="line">(function () &#123; /* code */ &#125;)(); // 但是这个也是可以用的</span><br><span class="line"></span><br><span class="line">// 由于括弧()和JS的&amp;&amp;，异或，逗号等操作符是在函数表达式和函数声明上消除歧义的</span><br><span class="line">// 所以一旦解析器知道其中一个已经是表达式了，其它的也都默认为表达式了</span><br><span class="line">// 不过，请注意下一章节的内容解释</span><br><span class="line"></span><br><span class="line">var i = function () &#123; return 10; &#125; ();</span><br><span class="line">true &amp;&amp; function () &#123; /* code */ &#125; ();</span><br><span class="line">0, function () &#123; /* code */ &#125; ();</span><br><span class="line"></span><br><span class="line">// 如果你不在意返回值，或者不怕难以阅读</span><br><span class="line">// 你甚至可以在function前面加一元操作符号</span><br><span class="line"></span><br><span class="line">!function () &#123; /* code */ &#125; ();</span><br><span class="line">~function () &#123; /* code */ &#125; ();</span><br><span class="line">-function () &#123; /* code */ &#125; ();</span><br><span class="line">+function () &#123; /* code */ &#125; ();</span><br><span class="line"></span><br><span class="line">// 还有一个情况，使用new关键字,也可以用，但我不确定它的效率</span><br><span class="line">// http://twitter.com/kuvos/status/18209252090847232</span><br><span class="line"></span><br><span class="line">new function () &#123; /* code */ &#125;</span><br><span class="line">new function () &#123; /* code */ &#125; () // 如果需要传递参数，只需要加上括弧()</span><br></pre></td></tr></table></figure>
+<h2 id="使用IIFE的好处"><a href="#使用IIFE的好处" class="headerlink" title="使用IIFE的好处"></a>使用IIFE的好处</h2><h3 id="提升性能"><a href="#提升性能" class="headerlink" title="提升性能"></a>提升性能</h3><p>减少作用域查找。使用IIFE的一个微小的性能优势是通过匿名函数的参数传递常用全局对象window、document、jQuery，在作用域内引用这些全局对象。JavaScript解释器首先在作用域内查找属性，然后一直沿着链向上查找，直到全局范围。将全局对象放在IIFE作用域内提升js解释器的查找速度和性能。</p>
+<p>传递全局对象到IIFE的一段代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Anonymous function that has three arguments</span><br><span class="line">function(window, document, $) &#123;</span><br><span class="line"></span><br><span class="line">  // You can now reference the window, document, and jQuery objects in a local scope</span><br><span class="line"></span><br><span class="line">&#125;(window, document, window.jQuery); // The global window, document, and jQuery objects are passed into the anonymous function</span><br></pre></td></tr></table></figure></p>
+<h3 id="有利于压缩"><a href="#有利于压缩" class="headerlink" title="有利于压缩"></a>有利于压缩</h3><p>另一个微小的优势是有利于代码压缩。既然通过参数传递了这些全局对象，压缩的时候可以将这些全局对象匿名为一个字符的变量名（只要这个字符没有被其他变量使用过）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Anonymous function that has three arguments</span><br><span class="line">function(w, d, $) &#123;</span><br><span class="line"></span><br><span class="line">  // You can now reference the window, document, and jQuery objects in a local scope</span><br><span class="line"></span><br><span class="line">&#125;(window, document, window.jQuery); // The global window, document, and jQuery objects are passed into the anonymous function</span><br></pre></td></tr></table></figure></p>
+<h3 id="避免全局命名冲突"><a href="#避免全局命名冲突" class="headerlink" title="避免全局命名冲突"></a>避免全局命名冲突</h3><p>当使用jQuery的时候，全局的window.jQuery对象 作为一个参数传递给$，在匿名函数内部你再也不需要担心$和其他库或者模板声明冲突</p>
+<h3 id="IIFE最佳实践"><a href="#IIFE最佳实践" class="headerlink" title="IIFE最佳实践"></a>IIFE最佳实践</h3><p>如果你有大量的JavaScript代码都在一段IIFE里，要是想查找IIFE传递的实际参数值，必须要滚动到代码最后。幸运的是，你可以使用一个更可读的模式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(function (library) &#123;</span><br><span class="line"></span><br><span class="line"> // Calls the second IIFE and locally passes in the global jQuery, window, and document objects</span><br><span class="line"> library(window, document, window.jQuery);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Locally scoped parameters </span><br><span class="line">(function (window, document, $) &#123;</span><br><span class="line"></span><br><span class="line">// Library code goes here</span><br><span class="line"></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure></p>
+<p>这种IIFE模式清晰的展示了传递了哪些全局对象到你的IIFE中，不需要滚动到长文档的最后</p>
+
+	
+	</div>
+  <a type="button" href="/2016/04/24/IIFE 立即调用的函数表达式/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-04-24 </div>
+			<div class="article-title"><a href="/2016/04/24/函数声明和函数表达式/" >函数声明和函数表达式</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<blockquote>
+<p>函数声明(function declaration): function test() {};<br>函数表达式(function expression): var test = function() {};</p>
+</blockquote>
+<p>函数声明和函数表达式在绝大多数情况下没有区别，唯独的区别在创建Function的时机上。</p>
+<p>代码A<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// function declaration</span><br><span class="line"></span><br><span class="line">sayHello(); // Hello!</span><br><span class="line"></span><br><span class="line">function sayHello()&#123;</span><br><span class="line">  alert(&apos;Hello!&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>代码B<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// function expression</span><br><span class="line"></span><br><span class="line">sayHello(); // TypeError: undefined is not a function</span><br><span class="line"></span><br><span class="line">var sayHello = function()&#123;</span><br><span class="line">  alert(&apos;Hello!&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这两段代码几乎是一样的，但是使用函数声明的代码A运行正常，而使用函数表达式的代码B则会报错。这是因为以下事实：<br><strong>JavaScript是一种解释型语言，函数声明会在JavaScript代码加载后、执行前被解释，而函数表达式只有在执行到这一行代码时才会被解释。</strong></p>
+<p>所以代码A相当于在执行sayHello()前已经建立了一个Function Object并赋给了变量sayHello，其对应代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var sayHello = new Function(&quot;alert(&apos;Hello!&apos;)&quot;);</span><br><span class="line">sayHello();</span><br></pre></td></tr></table></figure></p>
+<p>而代码B在执行sayHello()还未存在Function Object和变量sayHello，因为JavaScript在第一次使用某变量时会建立此变量，所以此处建立变量sayHello，但其值时undefined，未引用任何对象，将其作为函数来调用当然会出错。另外，解释JavaScript时如果某个变量已经存在，则其前面的“var”关键字被忽略，所以B代码等价于下列代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sayHello = undefined;</span><br><span class="line">sayHello(); // TypeError: undefined is not a function</span><br><span class="line">sayHello = new Function(&quot;alert(&apos;Hello&apos;)&quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>大多数浏览器支持将两种语法一起使用，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 除Safari外正确</span><br><span class="line">var func = function func()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是以上语法在Safari上会报错。因此为了浏览器兼容性考虑，任何时候都不要合并使用两种语法。</p>
+
+	
+	</div>
+  <a type="button" href="/2016/04/24/函数声明和函数表达式/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2016-04-04 </div>
 			<div class="article-title"><a href="/2016/04/04/JS相关问题/" >JS相关问题</a></div>						
 		</h3>
@@ -172,6 +241,40 @@
 	
 	</div>
   <a type="button" href="/2016/04/04/CSS相关问题/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-04-03 </div>
+			<div class="article-title"><a href="/2016/04/03/HTML相关问题/" >HTML相关问题</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="1、doctype-文档类型-的作用是什么？"><a href="#1、doctype-文档类型-的作用是什么？" class="headerlink" title="1、doctype (文档类型) 的作用是什么？"></a>1、doctype (文档类型) 的作用是什么？</h3><p><strong>Doctype标签</strong>是一种标准通用标记语言的文档类型声明，它的目的是要告诉标准通用标记语言解析器，它应该使用什么样的文档类型定义（DTD）来解析文档。<br><strong>DTD有三种类型：</strong>严格版本（Strict）、过渡版本(Transitional)以及基于框架(Frameset)的 HTML 文档。</p>
+<h3 id="2、浏览器标准模式-standards-mode-和怪异模式-quirks-mode-之间的区别是什么？"><a href="#2、浏览器标准模式-standards-mode-和怪异模式-quirks-mode-之间的区别是什么？" class="headerlink" title="2、浏览器标准模式 (standards mode) 和怪异模式 (quirks mode) 之间的区别是什么？"></a>2、浏览器标准模式 (standards mode) 和怪异模式 (quirks mode) 之间的区别是什么？</h3><p>在怪癖模式下：浏览器会模拟Navigator 4和IE5的方式来渲染页面。<br>在标准模式下：浏览器会用HTML和CSS规范定义的方式来渲染页面。<br>怪癖模式带来的影响主要是CSS布局。主要包括：<br>CSS 盒模型。在某些浏览器(如IE)的怪癖模式下，盒模型（box model）变成IE5.5的盒模型（IE5.5的盒模型的宽和高包括padding和border,即 border-box）。而标准模式的盒模型的宽高是不包括padding和border的<br>某些行内 (inline) 元素的垂直对齐的处理。很多早期的浏览器对齐图片至包含它们的盒子的下边框，虽然 CSS 的规范要求它们被对齐至盒内文本的基线。标准模式下，基于 Gecko 的浏览器将会对齐至基线，而在 怪癖模式下它们会对齐至底部。<br>表格样式是否继承。</p>
+<h3 id="3、HTML-和-XHTML-有什么区别？"><a href="#3、HTML-和-XHTML-有什么区别？" class="headerlink" title="3、HTML 和 XHTML 有什么区别？"></a>3、HTML 和 XHTML 有什么区别？</h3><p>HTML(超文本标记语言），XHTML(可扩展超文本标记语言)的区别为：<br>XHTML 要求正确嵌套<br>XHTML 所有元素必须关闭<br>XHTML 区分大小写<br>XHTML 属性值要用双引号<br>XHTML 用 id 属性代替 name 属性<br>XHTML 特殊字符的处理</p>
+<h3 id="4、如果页面使用-‘application-xhtml-xml’-会有什么问题吗？"><a href="#4、如果页面使用-‘application-xhtml-xml’-会有什么问题吗？" class="headerlink" title="4、如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？"></a>4、如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？</h3><p>‘application/xhtml+xml’：指的是XHTML文档的类型，一些老的浏览器不支持，不兼容。</p>
+<h3 id="5、如果网页内容需要支持多语言，你会怎么做？"><a href="#5、如果网页内容需要支持多语言，你会怎么做？" class="headerlink" title="5、如果网页内容需要支持多语言，你会怎么做？"></a>5、如果网页内容需要支持多语言，你会怎么做？</h3><h3 id="6、在设计和开发多语言网站时，有哪些问题你必须要考虑？"><a href="#6、在设计和开发多语言网站时，有哪些问题你必须要考虑？" class="headerlink" title="6、在设计和开发多语言网站时，有哪些问题你必须要考虑？"></a>6、在设计和开发多语言网站时，有哪些问题你必须要考虑？</h3><p>1、字符集的选择，多语言网站来说，Unicode字符集（一种双字节编码机制的字符集，不管东方还是西方一律用两个字节表示）应该是最理想的选择(UTF-8)；<br>2、语言书写习惯和导航结构（有些国家书写习惯为从右至左）；<br>3、数据库驱动型网站；<br>4、搜索引擎和市场推广；多语言的话，搜索引擎很复杂</p>
+<h3 id="7、data-属性的作用是什么？"><a href="#7、data-属性的作用是什么？" class="headerlink" title="7、data- 属性的作用是什么？"></a>7、data- 属性的作用是什么？</h3><p>data-<em>是HTML5的自定义属性，data属性规定对象所用资源的URL。<code>&lt;objectr data=&quot;URL&quot;&gt;</code>,URL可以为绝对路径，也可以相对路径。<br>data-</em> 属性用于存储页面或应用程序的私有自定义数据。<br>data-<em> 属性赋予我们在所有 HTML 元素上嵌入自定义 data 属性的能力。<br>存储的（自定义）数据能够被页面的 JavaScript 中利用，以创建更好的用户体验（不进行 Ajax 调用或服务器端数据库查询）。<br>data-</em> 属性包括两部分：<br>属性名不应该包含任何大写字母，并且在前缀 “data-“ 之后必须有至少一个字符<br>属性值可以是任意字符串</p>
+<h3 id="7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？"><a href="#7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？" class="headerlink" title="7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？"></a>7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？</h3><p><nav>, <header>,<section>, <footer></footer></section></header></nav></p>
+<h3 id="8、请描述-cookies-、-sessionStorage-和-localStorage-的区别。"><a href="#8、请描述-cookies-、-sessionStorage-和-localStorage-的区别。" class="headerlink" title="8、请描述  cookies 、 sessionStorage  和  localStorage  的区别。"></a>8、请描述  cookies 、 sessionStorage  和  localStorage  的区别。</h3><h3 id="9、请解释-lt-script-gt-、-lt-script-async-gt-和-lt-script-defer-gt-的区别。"><a href="#9、请解释-lt-script-gt-、-lt-script-async-gt-和-lt-script-defer-gt-的区别。" class="headerlink" title="9、请解释 &lt;script&gt;、 &lt;script async&gt;   和  &lt;script defer&gt;  的区别。"></a>9、请解释 <code>&lt;script&gt;、 &lt;script async&gt;</code>   和  <code>&lt;script defer&gt;</code>  的区别。</h3><p><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code><br>没有 defer或async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。<br><code>&lt;script async src=&quot;script.js&quot;&gt;&lt;/script&gt;</code><br>有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。<br><code>&lt;script defer src=&quot;myscript.js&quot;&gt;&lt;/script&gt;</code><br>有 defer，加载后续文档元素的过程将和script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成。<br>然后从实用角度来说呢，首先把所有脚本都丢到  之前是最佳实践，因为对于旧浏览器来说这是唯一的优化选择，此法可保证非脚本的其他一切元素能够以最快的速度得到加载和解析。</p>
+<p>接着，我们来看一张图咯：</p>
+<p>蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的；绿色线代表 HTML 解析。</p>
+<p>此图告诉我们以下几个要点：</p>
+<p>defer 和 async 在网络读取（下载）这块儿是一样的，都是异步的（相较于 HTML 解析）<br>它俩的差别在于脚本下载完之后何时执行，显然 defer 是最接近我们对于应用脚本加载和执行的要求的<br>关于 defer，此图未尽之处在于它是按照加载顺序执行脚本的，这一点要善加利用<br>async 则是一个乱序执行的主，反正对它来说脚本的加载和执行是紧紧挨着的，所以不管你声明的顺序如何，只要它加载完了就会立刻执行<br>仔细想想，async 对于应用脚本的用处不大，因为它完全不考虑依赖（哪怕是最低级的顺序执行），不过它对于那些可以不依赖任何脚本或不被任何脚本依赖的脚本来说却是非常合适的，最典型的例子：Google Analytics</p>
+<h3 id="10、为什么通常推荐将-CSS-lt-link-gt-放置在-lt-head-gt-lt-head-gt-之间，而将-JS-lt-script-gt-放置在-lt-body-gt-之前？你知道相关解释吗？"><a href="#10、为什么通常推荐将-CSS-lt-link-gt-放置在-lt-head-gt-lt-head-gt-之间，而将-JS-lt-script-gt-放置在-lt-body-gt-之前？你知道相关解释吗？" class="headerlink" title="10、为什么通常推荐将 CSS&lt;link&gt;放置在&lt;head&gt;&lt;/head&gt;之间，而将 JS  &lt;script&gt;  放置在  &lt;/body&gt; 之前？你知道相关解释吗？"></a>10、为什么通常推荐将 CSS<code>&lt;link&gt;</code>放置在<code>&lt;head&gt;&lt;/head&gt;</code>之间，而将 JS  <code>&lt;script&gt;</code>  放置在  <code>&lt;/body&gt;</code> 之前？你知道相关解释吗？</h3><p>浏览器从上到下依次解析html文档。将css文件放到头部，css文件可以先加载。避免先加载 body内容，导致页面一开始样式错乱，然后闪烁。将javascript 文件放到底部是因为：若将javascript文件放到head里面，就意味着必须等到所有的 javascript代码都被下载、解析和执行完成之后才开始呈现页面内容。这样就会造成呈现页面时出现明显的延迟，窗口一片空白。为避免这样的问题一般将全部 javascript 文件放到 body元素中页面内容的后面。</p>
+<h3 id="11、什么是渐进式渲染-progressive-rendering-？"><a href="#11、什么是渐进式渲染-progressive-rendering-？" class="headerlink" title="11、什么是渐进式渲染 (progressive rendering)？"></a>11、什么是渐进式渲染 (progressive rendering)？</h3><h3 id="12、你用过哪些不同的-HTML-模板语言？"><a href="#12、你用过哪些不同的-HTML-模板语言？" class="headerlink" title="12、你用过哪些不同的 HTML 模板语言？"></a>12、你用过哪些不同的 HTML 模板语言？</h3>
+	
+	</div>
+  <a type="button" href="/2016/04/03/HTML相关问题/#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -287,40 +390,6 @@
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2016-04-03 </div>
-			<div class="article-title"><a href="/2016/04/03/HTML相关问题/" >HTML相关问题</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="1、doctype-文档类型-的作用是什么？"><a href="#1、doctype-文档类型-的作用是什么？" class="headerlink" title="1、doctype (文档类型) 的作用是什么？"></a>1、doctype (文档类型) 的作用是什么？</h3><p><strong>Doctype标签</strong>是一种标准通用标记语言的文档类型声明，它的目的是要告诉标准通用标记语言解析器，它应该使用什么样的文档类型定义（DTD）来解析文档。<br><strong>DTD有三种类型：</strong>严格版本（Strict）、过渡版本(Transitional)以及基于框架(Frameset)的 HTML 文档。</p>
-<h3 id="2、浏览器标准模式-standards-mode-和怪异模式-quirks-mode-之间的区别是什么？"><a href="#2、浏览器标准模式-standards-mode-和怪异模式-quirks-mode-之间的区别是什么？" class="headerlink" title="2、浏览器标准模式 (standards mode) 和怪异模式 (quirks mode) 之间的区别是什么？"></a>2、浏览器标准模式 (standards mode) 和怪异模式 (quirks mode) 之间的区别是什么？</h3><p>在怪癖模式下：浏览器会模拟Navigator 4和IE5的方式来渲染页面。<br>在标准模式下：浏览器会用HTML和CSS规范定义的方式来渲染页面。<br>怪癖模式带来的影响主要是CSS布局。主要包括：<br>CSS 盒模型。在某些浏览器(如IE)的怪癖模式下，盒模型（box model）变成IE5.5的盒模型（IE5.5的盒模型的宽和高包括padding和border,即 border-box）。而标准模式的盒模型的宽高是不包括padding和border的<br>某些行内 (inline) 元素的垂直对齐的处理。很多早期的浏览器对齐图片至包含它们的盒子的下边框，虽然 CSS 的规范要求它们被对齐至盒内文本的基线。标准模式下，基于 Gecko 的浏览器将会对齐至基线，而在 怪癖模式下它们会对齐至底部。<br>表格样式是否继承。</p>
-<h3 id="3、HTML-和-XHTML-有什么区别？"><a href="#3、HTML-和-XHTML-有什么区别？" class="headerlink" title="3、HTML 和 XHTML 有什么区别？"></a>3、HTML 和 XHTML 有什么区别？</h3><p>HTML(超文本标记语言），XHTML(可扩展超文本标记语言)的区别为：<br>XHTML 要求正确嵌套<br>XHTML 所有元素必须关闭<br>XHTML 区分大小写<br>XHTML 属性值要用双引号<br>XHTML 用 id 属性代替 name 属性<br>XHTML 特殊字符的处理</p>
-<h3 id="4、如果页面使用-‘application-xhtml-xml’-会有什么问题吗？"><a href="#4、如果页面使用-‘application-xhtml-xml’-会有什么问题吗？" class="headerlink" title="4、如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？"></a>4、如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？</h3><p>‘application/xhtml+xml’：指的是XHTML文档的类型，一些老的浏览器不支持，不兼容。</p>
-<h3 id="5、如果网页内容需要支持多语言，你会怎么做？"><a href="#5、如果网页内容需要支持多语言，你会怎么做？" class="headerlink" title="5、如果网页内容需要支持多语言，你会怎么做？"></a>5、如果网页内容需要支持多语言，你会怎么做？</h3><h3 id="6、在设计和开发多语言网站时，有哪些问题你必须要考虑？"><a href="#6、在设计和开发多语言网站时，有哪些问题你必须要考虑？" class="headerlink" title="6、在设计和开发多语言网站时，有哪些问题你必须要考虑？"></a>6、在设计和开发多语言网站时，有哪些问题你必须要考虑？</h3><p>1、字符集的选择，多语言网站来说，Unicode字符集（一种双字节编码机制的字符集，不管东方还是西方一律用两个字节表示）应该是最理想的选择(UTF-8)；<br>2、语言书写习惯和导航结构（有些国家书写习惯为从右至左）；<br>3、数据库驱动型网站；<br>4、搜索引擎和市场推广；多语言的话，搜索引擎很复杂</p>
-<h3 id="7、data-属性的作用是什么？"><a href="#7、data-属性的作用是什么？" class="headerlink" title="7、data- 属性的作用是什么？"></a>7、data- 属性的作用是什么？</h3><p>data-<em>是HTML5的自定义属性，data属性规定对象所用资源的URL。<code>&lt;objectr data=&quot;URL&quot;&gt;</code>,URL可以为绝对路径，也可以相对路径。<br>data-</em> 属性用于存储页面或应用程序的私有自定义数据。<br>data-<em> 属性赋予我们在所有 HTML 元素上嵌入自定义 data 属性的能力。<br>存储的（自定义）数据能够被页面的 JavaScript 中利用，以创建更好的用户体验（不进行 Ajax 调用或服务器端数据库查询）。<br>data-</em> 属性包括两部分：<br>属性名不应该包含任何大写字母，并且在前缀 “data-“ 之后必须有至少一个字符<br>属性值可以是任意字符串</p>
-<h3 id="7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？"><a href="#7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？" class="headerlink" title="7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？"></a>7、如果把HTML5看作做一个开放平台，那它的构建模块有哪些？</h3><p><nav>, <header>,<section>, <footer></footer></section></header></nav></p>
-<h3 id="8、请描述-cookies-、-sessionStorage-和-localStorage-的区别。"><a href="#8、请描述-cookies-、-sessionStorage-和-localStorage-的区别。" class="headerlink" title="8、请描述  cookies 、 sessionStorage  和  localStorage  的区别。"></a>8、请描述  cookies 、 sessionStorage  和  localStorage  的区别。</h3><h3 id="9、请解释-lt-script-gt-、-lt-script-async-gt-和-lt-script-defer-gt-的区别。"><a href="#9、请解释-lt-script-gt-、-lt-script-async-gt-和-lt-script-defer-gt-的区别。" class="headerlink" title="9、请解释 &lt;script&gt;、 &lt;script async&gt;   和  &lt;script defer&gt;  的区别。"></a>9、请解释 <code>&lt;script&gt;、 &lt;script async&gt;</code>   和  <code>&lt;script defer&gt;</code>  的区别。</h3><p><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code><br>没有 defer或async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。<br><code>&lt;script async src=&quot;script.js&quot;&gt;&lt;/script&gt;</code><br>有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。<br><code>&lt;script defer src=&quot;myscript.js&quot;&gt;&lt;/script&gt;</code><br>有 defer，加载后续文档元素的过程将和script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成。<br>然后从实用角度来说呢，首先把所有脚本都丢到  之前是最佳实践，因为对于旧浏览器来说这是唯一的优化选择，此法可保证非脚本的其他一切元素能够以最快的速度得到加载和解析。</p>
-<p>接着，我们来看一张图咯：</p>
-<p>蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的；绿色线代表 HTML 解析。</p>
-<p>此图告诉我们以下几个要点：</p>
-<p>defer 和 async 在网络读取（下载）这块儿是一样的，都是异步的（相较于 HTML 解析）<br>它俩的差别在于脚本下载完之后何时执行，显然 defer 是最接近我们对于应用脚本加载和执行的要求的<br>关于 defer，此图未尽之处在于它是按照加载顺序执行脚本的，这一点要善加利用<br>async 则是一个乱序执行的主，反正对它来说脚本的加载和执行是紧紧挨着的，所以不管你声明的顺序如何，只要它加载完了就会立刻执行<br>仔细想想，async 对于应用脚本的用处不大，因为它完全不考虑依赖（哪怕是最低级的顺序执行），不过它对于那些可以不依赖任何脚本或不被任何脚本依赖的脚本来说却是非常合适的，最典型的例子：Google Analytics</p>
-<h3 id="10、为什么通常推荐将-CSS-lt-link-gt-放置在-lt-head-gt-lt-head-gt-之间，而将-JS-lt-script-gt-放置在-lt-body-gt-之前？你知道相关解释吗？"><a href="#10、为什么通常推荐将-CSS-lt-link-gt-放置在-lt-head-gt-lt-head-gt-之间，而将-JS-lt-script-gt-放置在-lt-body-gt-之前？你知道相关解释吗？" class="headerlink" title="10、为什么通常推荐将 CSS&lt;link&gt;放置在&lt;head&gt;&lt;/head&gt;之间，而将 JS  &lt;script&gt;  放置在  &lt;/body&gt; 之前？你知道相关解释吗？"></a>10、为什么通常推荐将 CSS<code>&lt;link&gt;</code>放置在<code>&lt;head&gt;&lt;/head&gt;</code>之间，而将 JS  <code>&lt;script&gt;</code>  放置在  <code>&lt;/body&gt;</code> 之前？你知道相关解释吗？</h3><p>浏览器从上到下依次解析html文档。将css文件放到头部，css文件可以先加载。避免先加载 body内容，导致页面一开始样式错乱，然后闪烁。将javascript 文件放到底部是因为：若将javascript文件放到head里面，就意味着必须等到所有的 javascript代码都被下载、解析和执行完成之后才开始呈现页面内容。这样就会造成呈现页面时出现明显的延迟，窗口一片空白。为避免这样的问题一般将全部 javascript 文件放到 body元素中页面内容的后面。</p>
-<h3 id="11、什么是渐进式渲染-progressive-rendering-？"><a href="#11、什么是渐进式渲染-progressive-rendering-？" class="headerlink" title="11、什么是渐进式渲染 (progressive rendering)？"></a>11、什么是渐进式渲染 (progressive rendering)？</h3><h3 id="12、你用过哪些不同的-HTML-模板语言？"><a href="#12、你用过哪些不同的-HTML-模板语言？" class="headerlink" title="12、你用过哪些不同的 HTML 模板语言？"></a>12、你用过哪些不同的 HTML 模板语言？</h3>
-	
-	</div>
-  <a type="button" href="/2016/04/03/HTML相关问题/#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -359,7 +428,7 @@
 		<h4>分类</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/Exercise/">Exercise<span>4</span></a></li>
+			<li><a href="/categories/Exercise/">Exercise<span>6</span></a></li>
 		
 		</ul>
 	</div>
@@ -374,15 +443,19 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2016/04/24/IIFE 立即调用的函数表达式/" ><i class="fa fa-file-o"></i>IIFE 立即调用的函数表达式</a>
+      </li>
+    
+      <li>
+        <a href="/2016/04/24/函数声明和函数表达式/" ><i class="fa fa-file-o"></i>函数声明和函数表达式</a>
+      </li>
+    
+      <li>
         <a href="/2016/04/04/JS相关问题/" ><i class="fa fa-file-o"></i>JS相关问题</a>
       </li>
     
       <li>
         <a href="/2016/04/04/CSS相关问题/" ><i class="fa fa-file-o"></i>CSS相关问题</a>
-      </li>
-    
-      <li>
-        <a href="/2016/04/03/前端面试题/" ><i class="fa fa-file-o"></i>前端面试题</a>
       </li>
     
       <li>
